@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+
 :root {
   --garden-bg: #f5f1e8;
   --garden-surface: #ebe5d5;
@@ -15,4 +17,31 @@
   --muted: #667066;
 
   --white: #fffdf7;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--garden-bg);
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--leaf);
+  color: var(--white);
 }
