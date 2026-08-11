@@ -1,19 +1,13 @@
 import "./App.css";
+import GardenNav from "./components/navigation/GardenNav";
 
 function App() {
   return (
     <main className="garden">
+      <GardenNav />
       <nav className="garden-nav">
         <div className="logo">VF<span>.</span></div>
-
-        <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </div>
       </nav>
-
       <section className="hero">
         <div className="hero-decoration leaf-one">✦</div>
         <div className="hero-decoration leaf-two">❧</div>
@@ -54,20 +48,40 @@ function App() {
         <div className="ground-decoration"></div>
       </section>
 
-      <section id="about" className="placeholder-section">
-        <p>ABOUT — COMING NEXT</p>
+      <section id="about" className="placeholder-section about-section">
+        <span className="section-number">01</span>
+
+        <div>
+          <p className="section-label">THE GARDENER</p>
+          <h2>About me</h2>
+        </div>
       </section>
 
-      <section id="work" className="placeholder-section">
-        <p>WORK — COMING NEXT</p>
+      <section id="work" className="placeholder-section work-section">
+        <span className="section-number">02</span>
+
+        <div>
+          <p className="section-label">THE GARDEN</p>
+          <h2>Things I've built</h2>
+        </div>
       </section>
 
-      <section id="skills" className="placeholder-section">
-        <p>SKILLS — COMING NEXT</p>
+      <section id="skills" className="placeholder-section skills-section">
+        <span className="section-number">03</span>
+
+        <div>
+          <p className="section-label">MY TOOLKIT</p>
+          <h2>What I grow with</h2>
+        </div>
       </section>
 
-      <section id="contact" className="placeholder-section">
-        <p>CONTACT — COMING NEXT</p>
+      <section id="contact" className="placeholder-section contact-section">
+        <span className="section-number">04</span>
+
+        <div>
+          <p className="section-label">THE GREENHOUSE</p>
+          <h2>Let's grow something</h2>
+        </div>
       </section>
     </main>
   );

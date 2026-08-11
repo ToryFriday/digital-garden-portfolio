@@ -54,7 +54,7 @@
 }
 
 .hero-content {
-  width: min(620px, 65%);
+  width: min(620px, 62%);
   position: relative;
   z-index: 10;
 }
@@ -128,7 +128,7 @@
   position: absolute;
   width: 360px;
   height: 500px;
-  right: 12%;
+  right: 15%;
   bottom: 0;
   z-index: 5;
 }
@@ -274,4 +274,62 @@
     transform: scale(0.8);
     transform-origin: bottom right;
   }
+
+  .placeholder-section {
+  min-height: 90vh;
+  padding: 120px 10vw;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-section h2 {
+  margin: 10px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.section-number {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--leaf);
+}
+
+.section-label {
+  margin: 0;
+  color: var(--leaf);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.about-section {
+  background: var(--garden-surface);
+}
+
+.work-section {
+  background: var(--garden-bg);
+}
+
+.skills-section {
+  background: #e6ede3;
+}
+
+.contact-section {
+  background: var(--leaf-deep);
+  color: var(--white);
+}
+
+.contact-section .section-label {
+  color: var(--sun);
+}
+
+.contact-section .section-number {
+  color: var(--leaf-soft);
+}
 }
