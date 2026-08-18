@@ -2,7 +2,7 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="top">
       {/* Atmospheric background */}
       <div className="hero-atmosphere" aria-hidden="true">
         <div className="atmosphere-orb atmosphere-orb-one"></div>

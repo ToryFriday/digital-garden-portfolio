@@ -1,11 +1,11 @@
-/* =========================
+/* =====================================================
    LOGO
-   ========================= */
+   ===================================================== */
 
 .garden-logo {
   position: fixed;
 
-  top: 42px;
+  top: 38px;
   left: 6.5vw;
 
   z-index: 100;
@@ -20,7 +20,9 @@
 
   text-decoration: none;
 
-  transition: transform 0.3s var(--ease-smooth);
+  transition:
+    transform 0.3s var(--ease-smooth),
+    opacity 0.3s ease;
 }
 
 .garden-logo span {
@@ -32,15 +34,15 @@
 }
 
 
-/* =========================
-   RIGHT-SIDE GARDEN NAV
-   ========================= */
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
 
 .garden-object-nav {
   position: fixed;
 
   top: 50%;
-  right: 18px;
+  right: 14px;
 
   z-index: 100;
 
@@ -48,21 +50,21 @@
   flex-direction: column;
   align-items: flex-end;
 
-  gap: 14px;
+  gap: 10px;
 
   transform: translateY(-50%);
 }
 
 
-/* =========================
-   INDIVIDUAL NAV OBJECT
-   ========================= */
+/* =====================================================
+   NAV OBJECT
+   ===================================================== */
 
 .garden-object {
   position: relative;
 
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
 
   padding: 0;
 
@@ -70,22 +72,22 @@
   align-items: center;
   justify-content: flex-end;
 
-  border: none;
+  border: 0;
   background: transparent;
+
+  color: var(--ink);
 
   cursor: pointer;
 
-  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
 }
 
 
-/* =========================
+/* =====================================================
    ICON
-   ========================= */
+   ===================================================== */
 
 .garden-object-icon {
-  position: relative;
-
   width: 48px;
   height: 48px;
 
@@ -97,64 +99,120 @@
 
   font-size: 1.35rem;
 
+  border-radius: 50%;
+
   transition:
-    transform 0.35s var(--ease-smooth),
-    filter 0.35s ease;
+    transform 0.45s var(--ease-smooth),
+    background 0.3s ease,
+    filter 0.3s ease;
 }
 
 
-/* =========================
+/* =====================================================
    LABEL
-   ========================= */
+   ===================================================== */
 
 .garden-object-label {
   position: absolute;
 
-  right: 54px;
+  right: 58px;
 
-  white-space: nowrap;
+  padding: 8px 13px;
 
-  padding: 7px 11px;
-
-  border-radius: 100px;
+  border-radius: 999px;
 
   background: var(--leaf-deep);
   color: var(--white);
 
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.03em;
+
+  letter-spacing: 0.04em;
+
+  white-space: nowrap;
 
   opacity: 0;
 
-  transform: translateX(10px);
+  transform: translateX(12px);
 
   pointer-events: none;
 
   transition:
     opacity 0.25s ease,
-    transform 0.35s var(--ease-smooth);
+    transform 0.4s var(--ease-smooth);
 }
 
 
-/* =========================
+/* =====================================================
    HOVER
-   ========================= */
+   ===================================================== */
 
-.garden-object:hover .garden-object-label {
+.garden-object:hover .garden-object-label,
+.garden-object:focus-visible .garden-object-label {
   opacity: 1;
-
   transform: translateX(0);
 }
 
-.garden-object:hover .garden-object-icon {
+.garden-object:hover .garden-object-icon,
+.garden-object:focus-visible .garden-object-icon {
+  transform: scale(1.18) rotate(-6deg);
+}
+
+
+/* =====================================================
+   ACTIVE STATE
+   ===================================================== */
+
+.garden-object.is-active .garden-object-icon {
+  background: rgba(85, 122, 91, 0.09);
+
+  transform: scale(1.12);
+}
+
+.garden-object.is-active .garden-object-icon::after {
+  content: "";
+
+  position: absolute;
+
+  right: 3px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--flower);
+}
+
+
+/* =====================================================
+   INDIVIDUAL PERSONALITIES
+   ===================================================== */
+
+.garden-object-about:hover .garden-object-icon {
+  transform: scale(1.18) rotate(-10deg);
+}
+
+.garden-object-work:hover .garden-object-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.garden-object-skills:hover .garden-object-icon {
+  transform: scale(1.2) translateY(-3px);
+}
+
+.garden-object-experience:hover .garden-object-icon {
+  transform: scale(1.18) rotate(8deg);
+}
+
+.garden-object-contact:hover .garden-object-icon {
   transform: scale(1.18) rotate(-5deg);
 }
 
 
-/* =========================
+/* =====================================================
    FOCUS
-   ========================= */
+   ===================================================== */
 
 .garden-object:focus-visible {
   outline: 2px solid var(--leaf);
@@ -165,9 +223,9 @@
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-   ========================= */
+   ===================================================== */
 
 @media (max-width: 800px) {
   .garden-logo {
@@ -178,26 +236,26 @@
   }
 
   .garden-object-nav {
-    right: 10px;
+    right: 7px;
 
-    gap: 8px;
+    gap: 4px;
   }
 
   .garden-object {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
 
   .garden-object-icon {
     width: 42px;
     height: 42px;
 
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .garden-object-label {
-    right: 48px;
+    right: 49px;
 
-    font-size: 0.65rem;
+    font-size: 0.63rem;
   }
 }
