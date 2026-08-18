@@ -1,0 +1,427 @@
+/* =====================================================
+   WORK SECTION
+   ===================================================== */
+
+.work-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 150px var(--page-padding) 160px;
+
+  overflow: hidden;
+
+  background: var(--garden-bg);
+}
+
+.work-inner {
+  width: min(1250px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.work-header {
+  display: grid;
+
+  grid-template-columns: 1fr 0.7fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 100px;
+}
+
+.work-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--leaf);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.work-header h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 7vw, 7rem);
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.06em;
+}
+
+.work-header h2 em {
+  color: var(--leaf);
+
+  font-style: italic;
+}
+
+.work-introduction {
+  max-width: 420px;
+
+  margin: 0 0 8px;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   PROJECT GARDEN
+   ===================================================== */
+
+.project-garden {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+   ===================================================== */
+
+.project-card {
+  position: relative;
+
+  min-height: 620px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(41, 73, 54, 0.1);
+
+  background: rgba(255, 255, 255, 0.28);
+
+  transition:
+    transform 0.5s var(--ease-smooth),
+    box-shadow 0.5s var(--ease-smooth);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 25px 60px rgba(41, 73, 54, 0.1);
+}
+
+
+/* =====================================================
+   NUMBER
+   ===================================================== */
+
+.project-number {
+  position: absolute;
+
+  top: 24px;
+  right: 25px;
+
+  z-index: 5;
+
+  color: var(--leaf);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =====================================================
+   PLANT AREA
+   ===================================================== */
+
+.project-plant-area {
+  position: relative;
+
+  height: 310px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(214, 222, 202, 0.5),
+      rgba(235, 229, 211, 0.25)
+    );
+}
+
+.project-glow {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  filter: blur(35px);
+}
+
+
+/* =====================================================
+   PROJECT PLANT
+   ===================================================== */
+
+.project-plant {
+  position: relative;
+
+  width: 180px;
+  height: 230px;
+
+  z-index: 2;
+
+  transition:
+    transform 0.6s var(--ease-smooth);
+}
+
+.project-card:hover .project-plant {
+  transform: translateY(-8px) rotate(-2deg);
+}
+
+
+/* stem */
+
+.project-stem {
+  position: absolute;
+
+  left: 87px;
+  bottom: 45px;
+
+  width: 6px;
+  height: 150px;
+
+  border-radius: 100px;
+
+  background: var(--leaf-deep);
+}
+
+
+/* leaves */
+
+.project-leaf {
+  position: absolute;
+
+  width: 75px;
+  height: 40px;
+
+  border-radius: 100% 0 100% 0;
+
+  background: var(--leaf);
+}
+
+.project-leaf-one {
+  left: 25px;
+  bottom: 115px;
+
+  transform: rotate(-25deg);
+}
+
+.project-leaf-two {
+  right: 15px;
+  bottom: 150px;
+
+  transform: scaleX(-1) rotate(-25deg);
+}
+
+.project-leaf-three {
+  left: 60px;
+  bottom: 175px;
+
+  transform: rotate(-8deg);
+}
+
+
+/* icon */
+
+.project-icon {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--soil);
+
+  font-size: 1.8rem;
+
+  box-shadow:
+    0 10px 20px rgba(41, 35, 28, 0.12);
+}
+
+
+/* =====================================================
+   PROJECT CONTENT
+   ===================================================== */
+
+.project-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+}
+
+.project-type {
+  margin: 0 0 12px;
+
+  color: var(--leaf);
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.project-content h3 {
+  margin: 0 0 18px;
+
+  font-family: var(--font-display);
+
+  font-size: 2.2rem;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+}
+
+.project-description {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   TECHNOLOGIES
+   ===================================================== */
+
+.project-technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 25px;
+}
+
+.project-technologies span {
+  padding: 6px 9px;
+
+  border: 1px solid rgba(41, 73, 54, 0.12);
+
+  border-radius: 999px;
+
+  color: var(--muted);
+
+  font-size: 0.62rem;
+}
+
+
+/* =====================================================
+   PROJECT LINK
+   ===================================================== */
+
+.project-link {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: auto;
+  padding-top: 30px;
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  font-size: 0.78rem;
+
+  border-bottom: 1px solid var(--ink);
+
+  transition:
+    gap 0.3s var(--ease-smooth),
+    color 0.3s ease;
+}
+
+.project-link:hover {
+  gap: 16px;
+
+  color: var(--leaf);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 950px) {
+  .work-header {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .project-garden {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+  }
+
+  .project-card {
+    min-height: 580px;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-section {
+    padding: 110px 7vw;
+  }
+
+  .project-plant-area {
+    height: 280px;
+  }
+}
