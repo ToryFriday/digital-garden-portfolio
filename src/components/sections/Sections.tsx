@@ -1,5 +1,8 @@
 import "./Sections.css";
 
+import Hero from "./Hero";
+import About from "./About";
+
 function Sections() {
   return (
     <>

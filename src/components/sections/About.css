@@ -1,0 +1,406 @@
+/* =====================================================
+   ABOUT SECTION
+   ===================================================== */
+
+.about-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 150px var(--page-padding) 140px;
+
+  overflow: hidden;
+
+  background: var(--cream-deep);
+}
+
+
+/* =====================================================
+   INNER
+   ===================================================== */
+
+.about-inner {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.about-heading {
+  margin-bottom: 90px;
+}
+
+.about-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--leaf);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.about-heading h2 {
+  margin: 0;
+
+  max-width: 800px;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 7vw, 7rem);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+}
+
+.about-heading h2 em {
+  color: var(--leaf);
+
+  font-style: italic;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+.about-content {
+  display: grid;
+
+  grid-template-columns: 1fr 0.8fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   STORY
+   ===================================================== */
+
+.about-story {
+  max-width: 580px;
+}
+
+.about-story p {
+  margin: 0 0 24px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  line-height: 1.9;
+}
+
+.about-story .about-lead {
+  margin-bottom: 32px;
+
+  color: var(--ink);
+
+  font-size: 1.45rem;
+
+  line-height: 1.55;
+}
+
+
+/* =====================================================
+   GARDEN CARD
+   ===================================================== */
+
+.about-garden-card {
+  position: relative;
+
+  min-height: 470px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 35px;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(214, 222, 202, 0.8),
+      rgba(235, 229, 211, 0.9)
+    );
+}
+
+
+/* soft light */
+
+.about-card-glow {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: 50px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  filter: blur(40px);
+}
+
+
+/* =====================================================
+   CARD PLANT
+   ===================================================== */
+
+.about-card-plant {
+  position: absolute;
+
+  width: 260px;
+  height: 360px;
+
+  left: 50%;
+  bottom: 65px;
+
+  transform: translateX(-50%);
+}
+
+
+/* stem */
+
+.about-card-stem {
+  position: absolute;
+
+  width: 7px;
+  height: 230px;
+
+  left: 128px;
+  bottom: 65px;
+
+  background: var(--leaf-deep);
+
+  border-radius: 100px;
+}
+
+
+/* leaves */
+
+.about-card-leaf {
+  position: absolute;
+
+  width: 105px;
+  height: 52px;
+
+  background: var(--leaf);
+
+  border-radius: 100% 0 100% 0;
+}
+
+.about-card-leaf.leaf-one {
+  left: 35px;
+  bottom: 190px;
+
+  transform: rotate(-25deg);
+}
+
+.about-card-leaf.leaf-two {
+  right: 30px;
+  bottom: 245px;
+
+  transform: scaleX(-1) rotate(-25deg);
+}
+
+.about-card-leaf.leaf-three {
+  left: 82px;
+  bottom: 280px;
+
+  transform: rotate(-5deg);
+}
+
+
+/* pot */
+
+.about-card-pot {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 125px;
+  height: 90px;
+
+  transform: translateX(-50%);
+
+  background: var(--soil);
+
+  clip-path: polygon(
+    8% 0,
+    92% 0,
+    78% 100%,
+    22% 100%
+  );
+}
+
+.about-card-pot span {
+  position: absolute;
+
+  left: 8px;
+  top: -5px;
+
+  width: 109px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #493b2d;
+}
+
+
+/* =====================================================
+   CARD CAPTION
+   ===================================================== */
+
+.about-card-caption {
+  position: absolute;
+
+  left: 35px;
+  bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.about-card-caption span {
+  color: var(--leaf);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.about-card-caption strong {
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 1.2rem;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   TRAITS
+   ===================================================== */
+
+.about-traits {
+  margin-top: 130px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(41, 73, 54, 0.15);
+}
+
+.about-trait {
+  position: relative;
+
+  padding: 35px 35px 0 0;
+}
+
+.about-trait + .about-trait {
+  padding-left: 35px;
+
+  border-left: 1px solid rgba(41, 73, 54, 0.15);
+}
+
+.trait-number {
+  color: var(--leaf);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.15em;
+}
+
+.about-trait h3 {
+  margin: 25px 0 12px;
+
+  font-family: var(--font-display);
+
+  font-size: 2.2rem;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+}
+
+.about-trait p {
+  max-width: 260px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 850px) {
+  .about-section {
+    padding: 110px 7vw;
+  }
+
+  .about-heading {
+    margin-bottom: 60px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .about-garden-card {
+    min-height: 420px;
+  }
+
+  .about-traits {
+    grid-template-columns: 1fr;
+
+    margin-top: 90px;
+  }
+
+  .about-trait,
+  .about-trait + .about-trait {
+    padding: 30px 0;
+
+    border-left: 0;
+    border-bottom: 1px solid rgba(41, 73, 54, 0.15);
+  }
+
+  .about-trait:last-child {
+    border-bottom: 0;
+  }
+}

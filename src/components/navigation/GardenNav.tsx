@@ -35,9 +35,11 @@ function GardenNav() {
   useEffect(() => {
     const sections = navigationItems
       .map((item) => document.getElementById(item.id))
-      .filter(Boolean);
+      .filter(
+        (section): section is HTMLElement => section !== null
+      );
 
-    if (!sections.length) return;
+    if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -58,9 +60,13 @@ function GardenNav() {
       }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
