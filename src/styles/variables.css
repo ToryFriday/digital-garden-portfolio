@@ -1,4 +1,8 @@
 :root {
+  /* =========================
+     GARDEN COLOURS
+     ========================= */
+
   --garden-bg: #f5f1e8;
   --garden-surface: #ebe5d5;
 
@@ -11,8 +15,32 @@
 
   --soil: #735947;
 
+  /* =========================
+     TEXT
+     ========================= */
+
   --ink: #253028;
   --muted: #667066;
 
   --white: #fffdf7;
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* =========================
+     LAYOUT
+     ========================= */
+
+  --page-padding: 8vw;
+  --section-padding: 10vw;
+
+  /* =========================
+     MOTION
+     ========================= */
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }

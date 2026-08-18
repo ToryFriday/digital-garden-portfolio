@@ -1,138 +1,203 @@
+/* =========================
+   LOGO
+   ========================= */
+
+.garden-logo {
+  position: fixed;
+
+  top: 42px;
+  left: 6.5vw;
+
+  z-index: 100;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+
+  letter-spacing: -0.08em;
+
+  text-decoration: none;
+
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.garden-logo span {
+  color: var(--flower);
+}
+
+.garden-logo:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   RIGHT-SIDE GARDEN NAV
+   ========================= */
+
 .garden-object-nav {
   position: fixed;
-  right: 32px;
+
   top: 50%;
-  transform: translateY(-50%);
+  right: 18px;
+
+  z-index: 100;
+
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  z-index: 50;
+  align-items: flex-end;
+
+  gap: 14px;
+
+  transform: translateY(-50%);
 }
+
+
+/* =========================
+   INDIVIDUAL NAV OBJECT
+   ========================= */
 
 .garden-object {
   position: relative;
-  width: 54px;
-  height: 54px;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
   border: none;
   background: transparent;
+
   cursor: pointer;
-  padding: 0;
+
+  color: var(--ink);
+}
+
+
+/* =========================
+   ICON
+   ========================= */
+
+.garden-object-icon {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  flex-shrink: 0;
+
+  font-size: 1.35rem;
+
   transition:
-    transform 0.35s ease,
+    transform 0.35s var(--ease-smooth),
     filter 0.35s ease;
 }
 
-.garden-object-icon {
-  font-size: 1.65rem;
-  display: block;
 
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
-}
+/* =========================
+   LABEL
+   ========================= */
 
 .garden-object-label {
   position: absolute;
-  right: 64px;
 
-  padding: 7px 12px;
+  right: 54px;
+
+  white-space: nowrap;
+
+  padding: 7px 11px;
+
   border-radius: 100px;
 
   background: var(--leaf-deep);
   color: var(--white);
 
   font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.03em;
 
   opacity: 0;
-  transform: translateX(8px);
+
+  transform: translateX(10px);
+
   pointer-events: none;
 
-  white-space: nowrap;
-
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    opacity 0.25s ease,
+    transform 0.35s var(--ease-smooth);
 }
 
-.garden-object:hover {
-  transform: scale(1.15);
-}
 
-.garden-object:hover .garden-object-icon {
-  transform: rotate(-8deg) translateY(-3px);
-}
+/* =========================
+   HOVER
+   ========================= */
 
 .garden-object:hover .garden-object-label {
   opacity: 1;
+
   transform: translateX(0);
 }
 
+.garden-object:hover .garden-object-icon {
+  transform: scale(1.18) rotate(-5deg);
+}
+
+
+/* =========================
+   FOCUS
+   ========================= */
+
 .garden-object:focus-visible {
   outline: 2px solid var(--leaf);
-  outline-offset: 5px;
+
+  outline-offset: 4px;
+
   border-radius: 50%;
 }
 
-.garden-object-about .garden-object-icon {
-  animation: tinySway 4s ease-in-out infinite;
-}
 
-.garden-object-work .garden-object-icon {
-  animation: tinyBounce 3.5s ease-in-out infinite;
-}
-
-.garden-object-skills .garden-object-icon {
-  animation: tinySway 4.5s ease-in-out infinite reverse;
-}
-
-.garden-object-experience .garden-object-icon {
-  animation: tinyBounce 4s ease-in-out infinite;
-}
-
-@keyframes tinySway {
-  0%,
-  100% {
-    transform: rotate(-3deg);
-  }
-
-  50% {
-    transform: rotate(5deg);
-  }
-}
-
-@keyframes tinyBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-}
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 800px) {
+  .garden-logo {
+    top: 28px;
+    left: 7vw;
+
+    font-size: 1.7rem;
+  }
+
   .garden-object-nav {
-    right: 15px;
+    right: 10px;
+
     gap: 8px;
   }
 
   .garden-object {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
   }
 
   .garden-object-icon {
-    font-size: 1.35rem;
+    width: 42px;
+    height: 42px;
+
+    font-size: 1.15rem;
   }
 
   .garden-object-label {
-    display: none;
+    right: 48px;
+
+    font-size: 0.65rem;
   }
 }

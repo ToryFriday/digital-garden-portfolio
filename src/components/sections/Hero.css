@@ -1,0 +1,673 @@
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+  position: relative;
+
+  min-height: 100svh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px var(--page-padding) 80px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: var(--garden-bg);
+}
+
+
+/* =====================================================
+   ATMOSPHERE
+   ===================================================== */
+
+.hero-atmosphere {
+  position: absolute;
+  inset: 0;
+
+  z-index: -5;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.atmosphere-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+.atmosphere-orb-one {
+  width: 420px;
+  height: 420px;
+
+  right: 8%;
+  top: 28%;
+
+  background: rgba(141, 165, 138, 0.13);
+}
+
+.atmosphere-orb-two {
+  width: 300px;
+  height: 300px;
+
+  left: 25%;
+  bottom: -120px;
+
+  background: rgba(217, 137, 140, 0.06);
+}
+
+
+/* =====================================================
+   BACKGROUND BOTANICALS
+   ===================================================== */
+
+.botanical-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+}
+
+.background-stem {
+  position: absolute;
+
+  width: 2px;
+
+  background: var(--leaf-soft);
+
+  transform-origin: bottom;
+}
+
+.background-stem-one {
+  height: 330px;
+
+  left: 7%;
+  bottom: -30px;
+
+  transform: rotate(-14deg);
+}
+
+.background-stem-two {
+  height: 250px;
+
+  right: 18%;
+  top: 15%;
+
+  transform: rotate(18deg);
+}
+
+.background-leaf {
+  position: absolute;
+
+  width: 85px;
+  height: 42px;
+
+  background: var(--leaf-soft);
+
+  border-radius: 100% 0 100% 0;
+}
+
+.leaf-a {
+  left: -68px;
+  bottom: 100px;
+
+  transform: rotate(-25deg);
+}
+
+.leaf-b {
+  right: -65px;
+  bottom: 180px;
+
+  transform: scaleX(-1) rotate(-20deg);
+}
+
+.leaf-c {
+  left: -50px;
+  bottom: 240px;
+
+  transform: rotate(20deg);
+}
+
+.leaf-d {
+  left: -65px;
+  bottom: 110px;
+
+  transform: rotate(-30deg);
+}
+
+.leaf-e {
+  right: -60px;
+  bottom: 170px;
+
+  transform: scaleX(-1) rotate(-25deg);
+}
+
+
+/* =====================================================
+   HERO CONTENT
+   ===================================================== */
+
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(620px, 62%);
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--leaf);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 500;
+
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+
+  animation: fadeUp 0.9s ease 0.15s both;
+}
+
+.hero h1 em {
+  color: var(--leaf);
+
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 510px;
+
+  margin: 35px 0 0;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  animation: fadeUp 0.9s ease 0.3s both;
+}
+
+
+/* =====================================================
+   CTA
+   ===================================================== */
+
+.garden-cta {
+  width: fit-content;
+
+  margin-top: 35px;
+  padding: 13px 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  border-radius: 100px;
+
+  background: var(--leaf-deep);
+  color: var(--white);
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  animation: fadeUp 0.9s ease 0.45s both;
+
+  transition:
+    transform 0.35s var(--ease-smooth),
+    box-shadow 0.35s var(--ease-smooth);
+}
+
+.garden-cta:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(41, 73, 54, 0.2);
+}
+
+.cta-plant {
+  font-size: 1.25rem;
+
+  transition:
+    transform 0.4s var(--ease-smooth);
+}
+
+.garden-cta:hover .cta-plant {
+  transform: rotate(-12deg) scale(1.2);
+}
+
+.cta-arrow {
+  font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   MAIN PLANT
+   ===================================================== */
+
+.hero-plant {
+  position: absolute;
+
+  width: 380px;
+  height: 520px;
+
+  right: 8%;
+  bottom: 35px;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  animation:
+    plantSway 5s ease-in-out 1.2s infinite,
+    fadePlant 1.2s ease 0.4s both;
+}
+
+
+/* Soft light behind plant */
+
+.plant-glow {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: 15px;
+  top: 70px;
+
+  border-radius: 50%;
+
+  background: var(--leaf-soft);
+
+  opacity: 0.12;
+
+  filter: blur(35px);
+}
+
+
+/* Stem */
+
+.stem {
+  position: absolute;
+
+  width: 9px;
+  height: 300px;
+
+  left: 170px;
+  bottom: 110px;
+
+  background: var(--leaf-deep);
+
+  border-radius: 100px;
+
+  transform: rotate(2deg);
+
+  transform-origin: bottom;
+}
+
+
+/* Leaves */
+
+.leaf {
+  position: absolute;
+
+  width: 120px;
+  height: 65px;
+
+  background: var(--leaf);
+
+  border-radius: 100% 0 100% 0;
+
+  transform-origin: bottom right;
+}
+
+.leaf-left {
+  left: 45px;
+  bottom: 290px;
+
+  transform: rotate(-28deg);
+
+  animation:
+    leafLeft 4s ease-in-out infinite;
+}
+
+.leaf-right {
+  left: 170px;
+  bottom: 350px;
+
+  transform: rotate(25deg) scaleX(-1);
+
+  animation:
+    leafRight 4.5s ease-in-out infinite;
+}
+
+.leaf-top {
+  left: 115px;
+  bottom: 390px;
+
+  transform: rotate(-8deg);
+}
+
+
+/* Pot */
+
+.pot {
+  position: absolute;
+
+  width: 150px;
+  height: 110px;
+
+  left: 100px;
+  bottom: 0;
+
+  background: var(--soil);
+
+  border-radius: 8px 8px 35px 35px;
+
+  clip-path: polygon(
+    8% 0,
+    92% 0,
+    78% 100%,
+    22% 100%
+  );
+}
+
+.soil {
+  position: absolute;
+
+  top: -6px;
+  left: 8px;
+
+  width: 134px;
+  height: 20px;
+
+  background: #493b2d;
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   DECORATIVE FLOATING ELEMENTS
+   ===================================================== */
+
+.hero-decoration {
+  position: absolute;
+
+  z-index: 3;
+
+  color: var(--leaf-soft);
+
+  pointer-events: none;
+
+  opacity: 0.7;
+}
+
+.decoration-star {
+  top: 25%;
+  left: 48%;
+
+  font-size: 2rem;
+
+  animation:
+    decorationFloat 4s ease-in-out infinite;
+}
+
+.decoration-doodle {
+  top: 22%;
+  right: 8%;
+
+  font-size: 4rem;
+
+  opacity: 0.55;
+
+  transform: rotate(20deg);
+
+  animation:
+    decorationFloat 5s ease-in-out 0.5s infinite;
+}
+
+
+/* =====================================================
+   FOREGROUND BOTANICALS
+   ===================================================== */
+
+.foreground-botanical {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 7;
+
+  pointer-events: none;
+}
+
+.foreground-leaf {
+  position: absolute;
+
+  background: var(--leaf);
+
+  border-radius: 100% 0 100% 0;
+
+  opacity: 0.75;
+}
+
+.foreground-leaf-one {
+  width: 130px;
+  height: 65px;
+
+  right: -45px;
+  bottom: 80px;
+
+  transform: rotate(-20deg);
+}
+
+.foreground-leaf-two {
+  width: 95px;
+  height: 48px;
+
+  left: -35px;
+  bottom: 30px;
+
+  transform: rotate(25deg);
+}
+
+.foreground-leaf-three {
+  width: 70px;
+  height: 35px;
+
+  right: 22%;
+  bottom: 12px;
+
+  transform: rotate(-35deg);
+
+  opacity: 0.4;
+}
+
+
+/* =====================================================
+   GARDEN FLOOR
+   ===================================================== */
+
+.garden-floor {
+  position: absolute;
+
+  left: -5%;
+  bottom: -75px;
+
+  width: 110%;
+  height: 150px;
+
+  z-index: 4;
+
+  background: rgba(41, 73, 54, 0.07);
+
+  border-radius: 50% 50% 0 0;
+
+  pointer-events: none;
+}
+
+.floor-line {
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+
+  top: 18px;
+
+  height: 1px;
+
+  background: rgba(85, 122, 91, 0.14);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadePlant {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes plantSway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes leafLeft {
+  0%,
+  100% {
+    transform: rotate(-28deg);
+  }
+
+  50% {
+    transform: rotate(-22deg);
+  }
+}
+
+@keyframes leafRight {
+  0%,
+  100% {
+    transform: rotate(25deg) scaleX(-1);
+  }
+
+  50% {
+    transform: rotate(30deg) scaleX(-1);
+  }
+}
+
+@keyframes decorationFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: 100svh;
+
+    padding: 130px 7vw 60px;
+
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 17vw, 6rem);
+  }
+
+  .hero-description {
+    max-width: 90%;
+  }
+
+  .hero-plant {
+    right: -110px;
+    bottom: -20px;
+
+    opacity: 0.32;
+
+    transform: scale(0.8);
+
+    transform-origin: bottom right;
+  }
+
+  .botanical-background {
+    opacity: 0.1;
+  }
+
+  .decoration-doodle {
+    right: 15%;
+    top: 18%;
+  }
+
+  .foreground-leaf-one {
+    right: -60px;
+  }
+}
